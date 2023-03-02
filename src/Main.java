@@ -17,6 +17,20 @@ public class Main {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
     }
+    public static int days (int allDistance) {
+        int deliveryDays = 1;
+        if (allDistance <= 20) {
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else if (allDistance > 20 && allDistance <= 60) {
+            deliveryDays ++;
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else if (allDistance > 60 && allDistance <= 100) {
+            deliveryDays += 2;
+            System.out.println("Потребуется дней: " + deliveryDays);
+        } else
+            System.out.println("Свыше 100 км доставки нет");
+        return deliveryDays;
+    }
     public static void main(String[] args) {
         task1();
         task2();
@@ -35,5 +49,7 @@ public class Main {
     }
     public static void task3() {
         System.out.println("Задача 3");
+        int deliveryDistance = 95;
+        days(deliveryDistance);
     }
 }
