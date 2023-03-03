@@ -20,16 +20,13 @@ public class Main {
     public static int days (int allDistance) {
         int deliveryDays = 1;
         if (allDistance <= 20) {
-            System.out.println("Потребуется дней: " + deliveryDays);
+            return deliveryDays;
         } else if (allDistance > 20 && allDistance <= 60) {
-            deliveryDays ++;
-            System.out.println("Потребуется дней: " + deliveryDays);
+            return deliveryDays + 1;
         } else if (allDistance > 60 && allDistance <= 100) {
-            deliveryDays += 2;
-            System.out.println("Потребуется дней: " + deliveryDays);
+            return deliveryDays + 2;
         } else
-            System.out.println("Свыше 100 км доставки нет");
-        return deliveryDays;
+        return deliveryDays + 3;
     }
     public static void main(String[] args) {
         task1();
@@ -50,6 +47,9 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         int deliveryDistance = 95;
-        days(deliveryDistance);
+        if (days(deliveryDistance) <= 3) {
+            System.out.println("Потребуется дней: " + days(deliveryDistance));
+        } else
+            System.out.println("Свыше 100 км доставки нет");
     }
 }
